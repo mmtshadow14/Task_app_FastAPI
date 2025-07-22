@@ -19,4 +19,4 @@ COPY . /src/
 EXPOSE 8000
 
 # Command to run the application with fastapi dev
-CMD ["fastapi", "dev", "main.py"]
+CMD ["fastapi", "dev", "--host","0.0.0.0","--ports","8000" ]
