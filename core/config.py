@@ -1,9 +1,13 @@
+import os
+
 from pydantic_settings import BaseSettings
+
+DATABASE_URL = os.getenv("DATABASE_URL")
 
 
 class Settings(BaseSettings):
     DEBUG: bool = True
-    SQLALCHEMY_DATABASE_URL: str = "postgresql://postgres:postgres@localhost:5432/postgres"
+    DATABASE_URL: str = DATABASE_URL
     JWT_SECRET_KEY: str = 'jwt-secret-key'
 
 
